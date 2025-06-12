@@ -1,0 +1,73 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+header {
+    background-color: #0d2340;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+header h1 {
+    font-weight: 700;
+}
+
+.table-responsive {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+table {
+    font-size: 0.9rem;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    z-index: 10;
+}
+
+.nav-tabs .nav-link {
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+footer {
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+}
+
+/* Team colors for better visualization */
+.team-DET { background-color: #0076b6; color: white; }
+.team-BUF { background-color: #00338d; color: #c60c30; }
+.team-BAL { background-color: #241773; color: #9e7c0c; }
+.team-TAM { background-color: #d50a0a; color: #34302b; }
+.team-WAS { background-color: #773141; color: #ffb612; }
+.team-CIN { background-color: #fb4f14; color: black; }
+.team-PHI { background-color: #004c54; color: #a5acaf; }
+.team-GNB { background-color: #203731; color: #ffb612; }
+.team-MIN { background-color: #4f2683; color: #ffc62f; }
+.team-DEN { background-color: #fb4f14; color: #002244; }
+.team-LAC { background-color: #0080c6; color: #ffc20e; }
+.team-ARI { background-color: #97233f; color: #000000; }
+.team-ATL { background-color: #a71930; color: #000000; }
+.team-SFO { background-color: #aa0000; color: #b3995d; }
+.team-KAN { background-color: #e31837; color: #ffb81c; }
+.team-PIT { background-color: #ffb612; color: #101820; }
+.team-IND { background-color: #002c5f; color: #a2aaad; }
+.team-SEA { background-color: #002244; color: #69be28; }
+.team-HOU { background-color: #03202f; color: #a71930; }
+.team-LAR { background-color: #003594; color: #ffa300; }
+.team-DAL { background-color: #041e42; color: #869397; }
+.team-MIA { background-color: #008e97; color: #fc4c02; }
+.team-CAR { background-color: #0085ca; color: #101820; }
+.team-NOR { background-color: #d3bc8d; color: #101820; }
+.team-NYJ { background-color: #125740; color: white; }
