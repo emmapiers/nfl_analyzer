@@ -22,28 +22,6 @@ def main():
         df_rb.to_excel(writer, sheet_name="RB Stats", index=False)
     print(f"Excel file successfully saved at: {output_file_path}")
 
-    # Save HTML
-    html_output_path = get_output_path('nfl_stats_2024.html')
-    with open(html_output_path, "w", encoding="utf-8") as f:
-        f.write("<html><head><title>NFL Stats</title></head><body>")
-        f.write("<h1>NFL Stats 2024</h1>")
-
-        f.write("<h2>Team Stats</h2>")
-        f.write(df_team.to_html(index=False))
-
-        f.write("<h2>QB Stats</h2>")
-        f.write(df_qb.to_html(index=False))
-
-        f.write("<h2>WR/TE Stats</h2>")
-        f.write(df_wr.to_html(index=False))
-
-        f.write("<h2>RB Stats</h2>")
-        f.write(df_rb.to_html(index=False))
-
-        f.write("</body></html>")
-
-    print(f"HTML file successfully saved at: {html_output_path}")
-
 
 if __name__ == "__main__":
    main()
