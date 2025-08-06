@@ -17,7 +17,7 @@ def combine_qb_stats(qb_rushing_stats, qb_passing_stats, team_rushing_stats):
         "TD%": 0.0,
         "Y/A": 0.0, 
         "Carry %": 0.0, 
-        "Yds/Carry": 0,
+        "Y/Carry": 0,
     }
     combined_stats = []
 
@@ -57,7 +57,6 @@ def combine_qb_stats(qb_rushing_stats, qb_passing_stats, team_rushing_stats):
 
     return combined_stats
 
-
 def make_qb_sheet(opp_stats):
     qb_passing_stats = scrape_qb()
     rb_stats, qb_rushing_stats = scrape_rushing()
@@ -66,14 +65,14 @@ def make_qb_sheet(opp_stats):
     qb_data = combine_qb_stats(qb_rushing_stats, qb_passing_stats, team_rushing_stats)
 
     df_qb = pd.DataFrame(qb_data)
-    df_qb['Cmp/G'] = pd.to_numeric(df_qb['TD%'], errors='coerce')
-    df_qb['Att/G'] = pd.to_numeric(df_qb['Y/A'], errors='coerce')
-    df_qb['Yds/G'] = pd.to_numeric(df_qb['Carry %'], errors='coerce')
-    df_qb['TD/G'] = pd.to_numeric(df_qb['Yds/Carry'], errors='coerce')
+    df_qb['Cmp/G'] = pd.to_numeric(df_qb['Cmp/G'], errors='coerce')
+    df_qb['Att/G'] = pd.to_numeric(df_qb['Att/G'], errors='coerce')
+    df_qb['Yds/G'] = pd.to_numeric(df_qb['Yds/G'], errors='coerce')
+    df_qb['TD/G'] = pd.to_numeric(df_qb['TD/G'], errors='coerce')
     df_qb['TD%'] = pd.to_numeric(df_qb['TD%'], errors='coerce')
     df_qb['Y/A'] = pd.to_numeric(df_qb['Y/A'], errors='coerce')
     df_qb['Carry %'] = pd.to_numeric(df_qb['Carry %'], errors='coerce')
-    df_qb['Yds/Carry'] = pd.to_numeric(df_qb['Yds/Carry'], errors='coerce')
+    df_qb['Y/Carry'] = pd.to_numeric(df_qb['Y/Carry'], errors='coerce')
     
     df_qb.fillna(0, inplace=True)
 

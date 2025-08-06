@@ -2,7 +2,8 @@ from sheet_makers.qb_sheet import make_qb_sheet
 from sheet_makers.wr_sheet import make_wr_sheet
 from sheet_makers.team_sheet import make_team_sheet, make_opp_stats
 from sheet_makers.rb_sheet import make_rb_sheet
-from utils.helpers import get_output_path
+from datetime import datetime
+from utils.helpers import get_output_path, get_round_by_date
 import pandas as pd 
 
 def main():
@@ -11,8 +12,12 @@ def main():
     df_team = make_team_sheet(opp_stats)
     df_wr = make_wr_sheet(opp_stats)
     df_rb = make_rb_sheet(opp_stats)
+    
+    current_date = datetime.now().strftime('%Y-%m-%d')
+    week_num = get_round_by_date(current_date)
 
-    output_file_path = get_output_path('nfl_stats_2024.xlsx')
+    filename = f"nfl_stats_week{week_num}.xlsx"
+    output_file_path = get_output_path(filename)
 
     with pd.ExcelWriter(output_file_path, engine="xlsxwriter") as writer:
         #write each df to a different tab

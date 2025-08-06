@@ -13,9 +13,6 @@ def scrape_rushing():
         columns = row.find_all('td')
         column_offset = len(columns) - len(headers)
 
-        rb_stats = []
-        qb_stats = []
-
         if columns:
             player = clean(columns[headers.index("Player")+column_offset]).rstrip('*+')
             position = clean(columns[headers.index("Pos")+column_offset])
@@ -28,7 +25,7 @@ def scrape_rushing():
                 "Player": player, 
                 "Team": str(team), 
                 "Att": str(attempts), 
-                "Yds/Carry": str(yards_per_att)
+                "Y/Carry": str(yards_per_att)
             }
 
             if position == "RB":
@@ -41,9 +38,9 @@ def scrape_rushing():
                     tds_per_game = per_game(attempts, td)
 
                 stats["Att/G"] = str(per_game(attempts, games_played))
-                stats["TD%"] = str(tds_per_game)
+                stats["TD %"] = str(tds_per_game)
                 rb_stats.append(stats)
             elif position == "QB":
-                rb_stats.append(stats)
+                qb_stats.append(stats)
             
     return rb_stats, qb_stats

@@ -24,7 +24,9 @@ def get_round_by_date(date_str):
         end_date = datetime.strptime(end_date_str, '%Y-%m-%d')
         if start_date <= input_date <= end_date:
             return round_num
-    return None
+        
+    #if before the first round
+    return 0
 
 def get_output_path(filename):
     '''Get the absolute path for the output file in the program's directory'''
