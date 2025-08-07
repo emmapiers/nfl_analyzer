@@ -40,7 +40,7 @@ def get_output_path(filename):
 
 def find_matchups():
     '''Get matchup for this week based on current date'''
-    relative_path = os.path.join('data', 'nfl-2024-UTC.xlsx')
+    relative_path = os.path.join('data', 'nfl-2025-UTC.xlsx')
     base_path = os.path.abspath(".")
     schedule_file = os.path.join(base_path, relative_path)
 
