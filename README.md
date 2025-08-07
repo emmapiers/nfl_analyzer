@@ -4,6 +4,8 @@ Compiling matchup-specific stats manually from multiple websites can be time-con
 
 To ensure easy access for users without a technical background, a simple static website hosted on GitHub Pages has been created. This method was used so that users can easily download the latest weekly spreadsheets without needing to run any code or install additional tools locally.
 
+Website link: https://emmapiers.github.io/nfl_analyzer/
+
 
 
 Data Sources:
