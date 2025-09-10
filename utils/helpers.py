@@ -28,6 +28,20 @@ def get_round_by_date(date_str):
     #if before the first round
     return 0
 
+def get_current_round():
+    """Return the NFL round number based on today's date."""
+    current_date = datetime.now().date()  # today’s date
+    
+    for round_num, (start_str, end_str) in round_to_date.items():
+        start_date = datetime.strptime(start_str, '%Y-%m-%d').date()
+        end_date = datetime.strptime(end_str, '%Y-%m-%d').date()
+        
+        if start_date <= current_date <= end_date:
+            return round_num
+    
+    # If today is before the first round
+    return 0
+
 def get_output_path(filename):
     '''Get the absolute path for the output file in the program's directory'''
     program_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -52,10 +66,9 @@ def find_matchups():
     schedule['Home Team abb'] = schedule['Home Team'].map(team_full_to_abb)
     schedule['Away Team abb'] = schedule['Away Team'].map(team_full_to_abb)
 
-    current_date = datetime.now().strftime('%Y-%m-%d')
-    current_round = get_round_by_date(current_date)
-  
-    games_for_cur_round = schedule[schedule['Round Number'] == current_round]
+    round_number = get_current_round()
+
+    games_for_cur_round = schedule[schedule['Round Number'] == round_number]
 
     return games_for_cur_round
 
